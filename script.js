@@ -97,12 +97,12 @@
   function setPlaying(state){
     playing = state;
     playBtn.setAttribute('aria-pressed', String(state));
-    playBtn.textContent = state ? 'Pysäytä musiikki' : 'Soita joulumelodia';
+    playBtn.textContent = state ? '⬛ Pysäytä musiikki' : '▶ Soita joulumelodia';
   }
-  function setMuted(state){
-    muteBtn.setAttribute('aria-pressed', String(state));
-    muteBtn.textContent = state ? 'Ääni päällä' : 'Hiljennä';
-  }
+  // function setMuted(state){
+  //   muteBtn.setAttribute('aria-pressed', String(state));
+  //   muteBtn.textContent = state ? 'Ääni päällä' : 'Hiljennä';
+  // }
 
   playBtn.addEventListener('click', function(){
     if(!music || !music.src) {
@@ -118,11 +118,11 @@
     }
   });
 
-  muteBtn.addEventListener('click', function(){
-    if(!music) return;
-    music.muted = !music.muted;
-    setMuted(music.muted);
-  });
+  // muteBtn.addEventListener('click', function(){
+  //   if(!music) return;
+  //   music.muted = !music.muted;
+  //   setMuted(music.muted);
+  // });
 
   // init state
   setPlaying(false);
